@@ -1,6 +1,11 @@
 <% provide(:title, 'Home') %>
-    <h1> Conference registration AKSTS</h1>
-    <p>
-      AKSTS..... registration.... applications...
-      <a href="http://aksts.ru/">AKSTS Russia</a>
-    </p>
+<div class="center hero-unit">
+    <h1> Welcome to AKSTS</h1>
+    <h2> Home page AKSTS Hi! </h2>
+    <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+</div>
+<p>
+  AKSTS..... registration.... applications...
+  <a href="http://aksts.ru/">AKSTS Russia</a>
+</p>
+<%= link_to image_tag("aksts_logo.jpg", alt: "AKSTS Site"), 'http://aksts.ru/' %>

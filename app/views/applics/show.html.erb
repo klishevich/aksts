@@ -1,0 +1,71 @@
+<% provide(:title, t(:your_application_details)) %>
+<h1><%= t(:your_application_details)%></h1>
+<div class="row">
+  <div class="span8 offset2">
+    <%= link_to t(:home), root_path, class: "btn btn-large btn-primary" %>
+    <%= link_to t(:edit), edit_applic_path, class: "btn btn-large btn-secondary" %>
+    <%= form_for(@applic) do |f| %>
+      <h3><%= t(:your_status) %> </h3>
+      <label class="checkbox"><%= f.check_box :student, disabled: true %><%= f.label :student %></label>
+      <label class="checkbox"><%= f.check_box :student_magistrant, disabled: true %><%= f.label :student_magistrant %></label>
+      <label class="checkbox"><%= f.check_box :aspirant, disabled: true %><%= f.label :aspirant %></label>
+      <label class="checkbox"><%= f.check_box :specialist, disabled: true %><%= f.label :specialist %></label>
+      <label class="checkbox"><%= f.check_box :bachelor, disabled: true %><%= f.label :bachelor %></label>
+      <label class="checkbox"><%= f.check_box :magister, disabled: true %><%= f.label :magister %></label>
+      <h3><%= t(:your_event) %> </h3>
+      <label class="checkbox"><%= f.check_box :participate_grant, disabled: true %><%= f.label :participate_grant %></label>
+      <label class="checkbox"><%= f.check_box :participate_ygf, disabled: true %><%= f.label :participate_ygf %></label>
+      <h3><%= t(:your_specialization)%></h3>
+      <label class="checkbox"><%= f.check_box :spec_astronomy, disabled: true %><%= f.label :spec_astronomy %></label>
+      <label class="checkbox"><%= f.check_box :spec_agriculture, disabled: true %><%= f.label :spec_agriculture %></label>
+      <label class="checkbox"><%= f.check_box :spec_aeronaft, disabled: true %><%= f.label :spec_aeronaft %></label>
+      <label class="checkbox"><%= f.check_box :spec_biotech_midicine, disabled: true %><%= f.label :spec_biotech_midicine %></label>
+      <label class="checkbox"><%= f.check_box :spec_geology, disabled: true %><%= f.label :spec_geology %></label>
+      <label class="checkbox"><%= f.check_box :spec_it, disabled: true %><%= f.label :spec_it %></label>
+      <label class="checkbox"><%= f.check_box :spec_shipbuilding, disabled: true %><%= f.label :spec_shipbuilding %></label>
+      <label class="checkbox"><%= f.check_box :spec_cryptography, disabled: true %><%= f.label :spec_cryptography %></label>
+      <label class="checkbox"><%= f.check_box :spec_maths, disabled: true %><%= f.label :spec_maths %></label>
+      <label class="checkbox"><%= f.check_box :spec_material, disabled: true %><%= f.label :spec_material %></label>
+      <label class="checkbox"><%= f.check_box :spec_carbuilding, disabled: true %><%= f.label :spec_carbuilding %></label>
+      <label class="checkbox"><%= f.check_box :spec_medicine, disabled: true %><%= f.label :spec_medicine %></label>
+      <label class="checkbox"><%= f.check_box :spec_mechanics, disabled: true %><%= f.label :spec_mechanics %></label>
+      <label class="checkbox"><%= f.check_box :spec_nanotech, disabled: true %><%= f.label :spec_nanotech %></label>
+      <label class="checkbox"><%= f.check_box :spec_tutoring, disabled: true %><%= f.label :spec_tutoring %></label>
+      <label class="checkbox"><%= f.check_box :spec_phsyhology, disabled: true %><%= f.label :spec_phsyhology %></label>
+      <label class="checkbox"><%= f.check_box :spec_pedology, disabled: true %><%= f.label :spec_pedology %></label>
+      <label class="checkbox"><%= f.check_box :spec_robototechnics, disabled: true %><%= f.label :spec_robototechnics %></label>
+      <label class="checkbox"><%= f.check_box :spec_sociology, disabled: true %><%= f.label :spec_sociology %></label>
+      <label class="checkbox"><%= f.check_box :spec_building_arcitecture_design, disabled: true %><%= f.label :spec_building_arcitecture_design %></label>
+      <label class="checkbox"><%= f.check_box :spec_physics, disabled: true %><%= f.label :spec_physics %></label>
+      <label class="checkbox"><%= f.check_box :spec_chemistry, disabled: true %><%= f.label :spec_chemistry %></label>
+      <label class="checkbox"><%= f.check_box :spec_energetics_electrotechnics, disabled: true %><%= f.label :spec_energetics_electrotechnics %></label>
+      <%= f.label :spec_other %><%= f.text_field :spec_other, disabled: true %>
+       <h3><%= t(:your_personal_info)%></h3>
+      <%= f.label :fio_rus %><%= f.text_field :fio_rus, disabled: true %>
+      <%= f.label :fio_eng %><%= f.text_field :fio_eng, disabled: true %>
+      <%= f.label :fio_kor %><%= f.text_field :fio_kor, disabled: true %>
+      <%= f.label :post_address %><%= f.text_field :post_address, disabled: true %>
+      <%= f.label :phone_home %><%= f.text_field :phone_home, disabled: true %>
+      <%= f.label :phone_work %><%= f.text_field :phone_work, disabled: true %>
+      <%= f.label :aksts_events_participation %><%= f.text_field :aksts_events_participation, disabled: true %>
+      <%= field_set_tag 'Ваш пол' do %>
+      <label class="checkbox"><%= f.check_box :sex_m, disabled: true %><%= f.label :sex_m %></label>
+      <label class="checkbox"><%= f.check_box :sex_w, disabled: true %><%= f.label :sex_w %></label>
+      <% end %>
+      <%= f.label :university %><%= f.text_field :university, disabled: true %>
+      <%= f.label :study_year %><%= f.text_field :study_year, disabled: true %>
+      <%= f.label :email %><%= f.text_field :email, disabled: true %>
+      <%= f.label :birth %><%= f.text_field :birth, disabled: true %>
+      <%= f.label :aksts_enter_year %><%= f.text_field :aksts_enter_year, disabled: true %>
+      <h3><%= t(:your_esse)%></h3>
+      <%= f.label :q_your_values %><%= f.text_area :q_your_values, rows: 5, disabled: true %>
+      <%= f.label :q_your_contribution %><%= f.text_area :q_your_contribution, rows: 5, disabled: true %>
+      <%= f.label :q_your_problem_solving %><%= f.text_area :q_your_problem_solving, rows: 5, disabled: true %>
+      <%= f.label :q_antok_interaction %><%= f.text_area :q_antok_interaction, rows: 5, disabled: true %>
+      <%= f.label :q_antok_suggestions %><%= f.text_area :q_antok_suggestions, rows: 5, disabled: true %>
+
+    <% end %>
+    <%= link_to t(:home), root_path, class: "btn btn-large btn-primary" %>
+    <%= link_to t(:edit), edit_applic_path, class: "btn btn-large btn-secondary" %>
+  </div>
+</div>

@@ -20,8 +20,8 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       sign_in @user
-      flash[:success] = "Welcome to the AKSTS!"
-      redirect_to @user
+      flash[:success] = t(:welcome_to_aksts)
+      redirect_to root_url
     else
       render 'new'
     end

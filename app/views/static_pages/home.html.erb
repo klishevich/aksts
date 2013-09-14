@@ -1,11 +1,28 @@
 <% provide(:title, 'Home') %>
 <div class="center hero-unit">
-    <h1> Welcome to AKSTS</h1>
-    <h2> Home page AKSTS Hi! </h2>
-    <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+	<% if !signed_in? %>
+      <h1 id="welcome_aksts"> <%= t(:welcome_aksts) %></h1>
+      <h2> <%= t(:welcome_aksts_description) %> </h2>
+      <%= link_to t(:sign_up), signup_path, class: "btn btn-large btn-primary" %>
+    <% else %>
+      <h1> <%= t(:grant_contest) %> </h1>
+      <h2> <%= t(:grant_contest_description) %></h2>
+      <% if !have_applic %> 
+        <%= link_to t(:sign_up_to_contest), apply_path, class: "btn btn-large btn-primary", id: "sign_up_to_contest" %> 
+      <% else %>
+        <%= link_to t(:view_application), current_user.applic, class: "btn btn-large btn-secondary" %>
+      <% end %>
+    <% end %>
 </div>
-<p>
-  AKSTS..... registration.... applications...
-  <a href="http://aksts.ru/">AKSTS Russia</a>
-</p>
-<%= link_to image_tag("aksts_logo.jpg", alt: "AKSTS Site"), 'http://aksts.ru/' %>
+<div class="row">
+  <aside class="span4">
+    <%= link_to image_tag("aksts_logo.jpg", alt: "AKSTS Site"), 'http://aksts.ru/' %>
+  </aside>
+  <div class="span8">
+    <p>Ассоциация научно-технических обществ корейцев (АНТОК) СНГ была основана в 1991 году и именовалась тогда, как «Межреспубликанская ассоциация советских корейцев». Была переименована после распада СССР. АНТОК объединяет научные корейские диаспоры России, Казахстана, Узбекистана, Киргизии, Украины. В состав Российского НТО входят ученые Москвы и области, С.-Петербурга, Новосибирска, Красноярска, Воронежа, Омска, Владивостока.</p>
+    <p>АНТОК входит во Всемирную федерацию научно-технологических обществ (КОФСТ), имеющую штаб-квартиру в Сеуле, Республика Корея (www.kofst.or.kr). Кроме АНТОК в КОФСТ входят научно-технические общества США, Канады, Германии, Франции, Англии, Китая, Японии, Австрии. Вместе с Россией, Казахстаном и Узбекистаном 11 стран.</p>
+    <p>С 2001 года АНТОК разделяется на два отделения — Центрально-азиатское, объединяющее Казахстан, Узбекистан и Киргизию (ЦАО АНТОК) и Европейское (ЕО АНТОК). Центральный офис АНТОК находится в Москве.</p>
+    <p>АНТОК СНГ является некоммерческой организацией, созданной для содействия ее членам в достижении социальных, культурных, благотворительных, образовательных, профессиональных, научных и управленческих целей, духовных и иных нематериальных потребностей, защиты прав и законных интересов, разрешения споров и конфликтов, оказания юридической помощи и иных целей, направленных на достижение общественных благ.</p>
+    <p>Информационный сайт АНТОК находится по адресу - <a href="http://www.aksts.ru/">www.aksts.ru</a></p>
+  </div>
+</div>

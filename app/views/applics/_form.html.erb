@@ -1,0 +1,76 @@
+<div class="row">
+  <div class="span8 offset2">
+    <%= form_for(@applic) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <%= f.submit t(:save), class: "btn btn-large btn-primary" %>
+      <%= link_to t(:cancel), current_user.applic, class: "btn btn-large btn-secondary" %>
+
+      <h3><%= t(:your_status) %> </h3>
+      <label class="checkbox"><%= f.check_box :student %><%= f.label :student %></label>
+      <label class="checkbox"><%= f.check_box :student_magistrant %><%= f.label :student_magistrant %></label>
+      <label class="checkbox"><%= f.check_box :aspirant %><%= f.label :aspirant %></label>
+      <label class="checkbox"><%= f.check_box :specialist %><%= f.label :specialist %></label>
+      <label class="checkbox"><%= f.check_box :bachelor %><%= f.label :bachelor %></label>
+      <label class="checkbox"><%= f.check_box :magister %><%= f.label :magister %></label>
+      <h3><%= t(:your_event) %> </h3>
+      <label class="checkbox"><%= f.check_box :participate_grant %><%= f.label :participate_grant %></label>
+      <label class="checkbox"><%= f.check_box :participate_ygf %><%= f.label :participate_ygf %></label>
+      <h3><%= t(:your_specialization)%></h3>
+      <label class="checkbox"><%= f.check_box :spec_astronomy %><%= f.label :spec_astronomy %></label>
+      <label class="checkbox"><%= f.check_box :spec_agriculture %><%= f.label :spec_agriculture %></label>
+      <label class="checkbox"><%= f.check_box :spec_aeronaft %><%= f.label :spec_aeronaft %></label>
+      <label class="checkbox"><%= f.check_box :spec_biotech_midicine %><%= f.label :spec_biotech_midicine %></label>
+      <label class="checkbox"><%= f.check_box :spec_geology %><%= f.label :spec_geology %></label>
+      <label class="checkbox"><%= f.check_box :spec_it %><%= f.label :spec_it %></label>
+      <label class="checkbox"><%= f.check_box :spec_shipbuilding %><%= f.label :spec_shipbuilding %></label>
+      <label class="checkbox"><%= f.check_box :spec_cryptography %><%= f.label :spec_cryptography %></label>
+      <label class="checkbox"><%= f.check_box :spec_maths %><%= f.label :spec_maths %></label>
+      <label class="checkbox"><%= f.check_box :spec_material %><%= f.label :spec_material %></label>
+      <label class="checkbox"><%= f.check_box :spec_carbuilding %><%= f.label :spec_carbuilding %></label>
+      <label class="checkbox"><%= f.check_box :spec_medicine %><%= f.label :spec_medicine %></label>
+      <label class="checkbox"><%= f.check_box :spec_mechanics %><%= f.label :spec_mechanics %></label>
+      <label class="checkbox"><%= f.check_box :spec_nanotech %><%= f.label :spec_nanotech %></label>
+      <label class="checkbox"><%= f.check_box :spec_tutoring %><%= f.label :spec_tutoring %></label>
+      <label class="checkbox"><%= f.check_box :spec_phsyhology %><%= f.label :spec_phsyhology %></label>
+      <label class="checkbox"><%= f.check_box :spec_pedology %><%= f.label :spec_pedology %></label>
+      <label class="checkbox"><%= f.check_box :spec_robototechnics %><%= f.label :spec_robototechnics %></label>
+      <label class="checkbox"><%= f.check_box :spec_sociology %><%= f.label :spec_sociology %></label>
+      <label class="checkbox"><%= f.check_box :spec_building_arcitecture_design %><%= f.label :spec_building_arcitecture_design %></label>
+      <label class="checkbox"><%= f.check_box :spec_physics %><%= f.label :spec_physics %></label>
+      <label class="checkbox"><%= f.check_box :spec_chemistry %><%= f.label :spec_chemistry %></label>
+      <label class="checkbox"><%= f.check_box :spec_energetics_electrotechnics %><%= f.label :spec_energetics_electrotechnics %></label>
+      <%= f.label :spec_other %><%= f.text_field :spec_other %>
+      <h3><%= t(:your_personal_info)%></h3>
+      <%= f.label :fio_rus %><%= f.text_field :fio_rus %>
+      <%= f.label :fio_eng %><%= f.text_field :fio_eng %>
+      <%= f.label :fio_kor %><%= f.text_field :fio_kor %>
+      <%= f.label :post_address %><%= f.text_field :post_address %>
+      <%= f.label :phone_home %><%= f.text_field :phone_home %>
+      <%= f.label :phone_work %><%= f.text_field :phone_work %>
+      <%= f.label :aksts_events_participation %><%= f.text_field :aksts_events_participation %>
+      <%= field_set_tag 'Ваш пол' do %>
+        <label class="checkbox"><%= f.check_box :sex_m %><%= f.label :sex_m %></label>
+        <label class="checkbox"><%= f.check_box :sex_w %><%= f.label :sex_w %></label>
+      <% end %>
+      <%= f.label :university %><%= f.text_field :university %>
+      <%= f.label :study_year %><%= f.text_field :study_year %>
+      <%= f.label :email %><%= f.text_field :email %>
+      <%= f.label :birth %><%= f.text_field :birth %>
+      <%= f.label :aksts_enter_year %><%= f.text_field :aksts_enter_year %>
+      <h3><%= t(:your_esse)%></h3>
+      <%= f.label :q_your_values %><%= f.text_area :q_your_values, rows: 5 %>
+      <%= f.label :q_your_contribution %><%= f.text_area :q_your_contribution, rows: 5 %>
+      <%= f.label :q_your_problem_solving %><%= f.text_area :q_your_problem_solving, rows: 5 %>
+      <%= f.label :q_antok_interaction %><%= f.text_area :q_antok_interaction, rows: 5 %>
+      <%= f.label :q_antok_suggestions %><%= f.text_area :q_antok_suggestions, rows: 5 %>
+
+      <%= f.submit t(:save), class: "btn btn-large btn-primary", id: "Save" %>
+      <%= link_to t(:cancel), current_user.applic, class: "btn btn-large btn-secondary" %>
+    <% end %>
+  </div>
+</div>
+<script type="text/javascript">
+ $(document).ready(function(){
+   $('#applic_birth').datepicker({format: 'yyyy-mm-dd'});
+})
+</script>

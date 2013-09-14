@@ -44,7 +44,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 3em;
-  letter-spacing: -2px;
+  letter-spacing: -1px;
   margin-bottom: 30px;
   text-align: center;
 }
@@ -59,8 +59,9 @@ h2 {
 }
 
 p {
-  font-size: 1.1em;
-  line-height: 1.7em;
+  /*font-size: 1.1em;
+  line-height: 1.7em;*/
+  text-align: justify;
 }
 
 /* header */
@@ -187,4 +188,8 @@ input {
       border-bottom: 1px solid $grayLighter;
     }
   }
+}
+
+.btn {
+  margin-bottom: 20px;
 }

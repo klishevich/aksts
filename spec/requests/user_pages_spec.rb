@@ -51,7 +51,7 @@ describe "UserPages" do
 
   describe "signup page" do
     before { visit signup_path }
-    it { should have_selector('h1', text: 'Sign up') }
+    it { find('#register_antok') }
   end
 
   describe "profile page" do
@@ -64,7 +64,7 @@ describe "UserPages" do
 
     before { visit signup_path }
 
-    let(:submit) { "Create my account" }
+    let(:submit) { "create_my_account" }
 
     describe "with invalid information" do
       it "should not create a user" do
@@ -74,10 +74,10 @@ describe "UserPages" do
 
     describe "with valid information" do
       before do
-        fill_in "Name",         with: "Example User"
-        fill_in "Email",        with: "user@example.com"
-        fill_in "Password",     with: "foobar"
-        fill_in "Confirmation", with: "foobar"
+        fill_in "user_name",         with: "Example User"
+        fill_in "user_email",        with: "user@example.com"
+        fill_in "user_password",     with: "foobar"
+        fill_in "user_password_confirmation", with: "foobar"
       end
 
       it "should create a user" do
@@ -111,10 +111,10 @@ describe "UserPages" do
       let(:new_name)  { "New Name" }
       let(:new_email) { "new@example.com" }
       before do
-        fill_in "Name",             with: new_name
-        fill_in "Email",            with: new_email
-        fill_in "Password",         with: user.password
-        fill_in "Confirm Password", with: user.password
+        fill_in "user_name",             with: new_name
+        fill_in "user_email",            with: new_email
+        fill_in "user_password",         with: user.password
+        fill_in "user_password_confirmation", with: user.password
         click_button "Save changes"
       end
 

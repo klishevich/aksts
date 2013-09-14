@@ -5,7 +5,7 @@ describe "Static pages" do
 
   before {visit root_path}
 
-  it {should have_selector('h1', text: 'Welcome to AKSTS')}
+  it { find('#welcome_aksts') } 
 
   it "should have the right links on the layout" do
     click_link "About"
@@ -15,6 +15,6 @@ describe "Static pages" do
     click_link "Contact"
     page.should have_selector 'h1', text: 'Contacts'
     click_link "Home"
-    page.should have_selector 'h1', text: 'Welcome to AKSTS'
+    find('#welcome_aksts')
   end
 end

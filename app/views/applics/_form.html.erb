@@ -72,6 +72,10 @@
          <button type="button" class="close" data-dismiss="alert">&times;</button>
            Все подтверждающие документы подаются в электронном виде по адресу <a href="mailto:AKSTSRussia@gmail.com">AKSTSRussia@gmail.com</a>. Документы с оригинальными печатями, подписями и т.п. сканируются в цвете с разрешением не менее 300 dpi и конвертируются в формат PDF. Все документы, должны быть представлены в формате PDF или одном из форматов MS Office (DOC, PPT, XLS). Суммарный размер файлов заявки не должен превышать 10 Мб. Заявки на участие, без подтверждающих документов, к рассмотрению не принимаются.
        </div>
+       <div class="alert">
+         <button type="button" class="close" data-dismiss="alert">&times;</button>
+           Перед тем как сохранить, проверьте правильность внесенных данных. После сохранения анкеты, внести изменения будет не возможно.
+       </div>
       <%= f.submit t(:save), class: "btn btn-large btn-primary", id: "Save" %>
       <%= link_to t(:cancel), current_user.applic, class: "btn btn-large btn-secondary" %>
     <% end %>

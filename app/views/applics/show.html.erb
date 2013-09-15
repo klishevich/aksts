@@ -2,8 +2,7 @@
 <h1><%= t(:your_application_details)%></h1>
 <div class="row">
   <div class="span8 offset2 applic-form">
-    <%= link_to t(:home), root_path, class: "btn btn-large btn-primary" %>
-    <%= link_to t(:edit), edit_applic_path, class: "btn btn-large btn-secondary" %>
+    <%= link_to t(:home), root_path, class: "btn btn-large btn-secondary" %>
     <%= form_for(@applic) do |f| %>
       <h3><%= t(:your_status) %> </h3>
       <label class="checkbox"><%= f.check_box :student, disabled: true %><%= f.label :student %></label>
@@ -74,7 +73,6 @@
       <button type="button" class="close" data-dismiss="alert">&times;</button>
         Все подтверждающие документы подаются в электронном виде по адресу <a href="mailto:AKSTSRussia@gmail.com">AKSTSRussia@gmail.com</a>. Документы с оригинальными печатями, подписями и т.п. сканируются в цвете с разрешением не менее 300 dpi и конвертируются в формат PDF. Все документы, должны быть представлены в формате PDF или одном из форматов MS Office (DOC, PPT, XLS). Суммарный размер файлов заявки не должен превышать 10 Мб. Заявки на участие, без подтверждающих документов, к рассмотрению не принимаются.
     </div>
-    <%= link_to t(:home), root_path, class: "btn btn-large btn-primary" %>
-    <%= link_to t(:edit), edit_applic_path, class: "btn btn-large btn-secondary" %>
+    <%= link_to t(:home), root_path, class: "btn btn-large btn-secondary" %>
   </div>
 </div>

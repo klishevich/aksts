@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130910172300) do
+ActiveRecord::Schema.define(:version => 20130915142746) do
 
   create_table "applics", :force => true do |t|
     t.integer  "user_id"
@@ -66,8 +66,17 @@ ActiveRecord::Schema.define(:version => 20130910172300) do
     t.string   "q_your_problem_solving"
     t.string   "q_antok_interaction"
     t.string   "q_antok_suggestions"
-    t.datetime "created_at",                       :null => false
-    t.datetime "updated_at",                       :null => false
+    t.datetime "created_at",                                          :null => false
+    t.datetime "updated_at",                                          :null => false
+    t.decimal  "bal_2013_spring"
+    t.decimal  "bal_2012_fall"
+    t.decimal  "bal_total"
+    t.boolean  "social_work_yes"
+    t.boolean  "social_work_no"
+    t.boolean  "recomendation_antok"
+    t.boolean  "recomendation_not_antok"
+    t.boolean  "recomendation_no"
+    t.boolean  "sent",                             :default => false
   end
 
   add_index "applics", ["user_id"], :name => "index_applics_on_user_id"

@@ -24,7 +24,6 @@ describe "ApplicPages" do
 	  	page.check('applic_spec_maths')
 	  	fill_in "applic_fio_rus", with: "Mihail Klishevich Rus"
 	  	fill_in "applic_fio_eng", with: "Mihail Klishevich Eng"
-	  	fill_in "applic_fio_kor", with: "Mihail Klishevich Kor"
 	  	fill_in "applic_post_address", with: "Russia, Moscow, Mechera 6/2-108"
 	  	fill_in "applic_phone_home", with: "+79139238446"
 	  	page.check('applic_sex_m')
@@ -36,8 +35,13 @@ describe "ApplicPages" do
 	  	fill_in "applic_q_your_values", with: "no"
 	  	fill_in "applic_q_your_contribution", with: "no"
 	  	fill_in "applic_q_your_problem_solving", with: "no"
-	  	fill_in "applic_q_antok_interaction", with: "no"
-	  	fill_in "applic_q_antok_suggestions", with: "no"
+
+	  	fill_in "applic_bal_2013_spring", with: "4.7"
+	  	fill_in "applic_bal_2012_fall", with: "5"
+	  	fill_in "applic_bal_total", with: "4.5"
+	  	page.check('applic_social_work_yes')
+	  	page.check('applic_recomendation_not_antok')
+
 	  	click_button "Save"
 	  end
 

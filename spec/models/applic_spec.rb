@@ -19,8 +19,12 @@ describe Applic do
 	it { should respond_to(:birth) }
 	it { should respond_to(:aksts_enter_year) }
 	it { should respond_to(:q_your_values) }
+	it { should respond_to(:bal_total) }
+	it { should respond_to(:bal_2013_spring) }
+	it { should respond_to(:bal_2012_fall) }
 	it { should respond_to(:user_id) }
 	it { should respond_to(:user) }
+	it { should respond_to(:sent) }
 	its(:user) { should == user}
 
 	it { should be_valid}
@@ -37,6 +41,11 @@ describe Applic do
 
 	describe "when fio_rus is short" do
 		before { applic.fio_rus = "qwer" }
+		it { should_not be_valid }
+	end
+
+	describe "when bal_total is not present" do
+		before { applic.bal_total = nil }
 		it { should_not be_valid }
 	end
 

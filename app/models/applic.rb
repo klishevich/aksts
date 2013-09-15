@@ -8,7 +8,9 @@ class Applic < ActiveRecord::Base
       :spec_energetics_electrotechnics, :spec_other, :fio_rus, :fio_eng, :fio_kor, :post_address,
       :phone_home, :phone_work, :aksts_events_participation, :sex_m, :sex_w, :university, :study_year,
       :email, :birth, :aksts_enter_year, :q_your_values, :q_your_contribution, :q_your_problem_solving,
-      :q_antok_interaction, :q_antok_suggestions
+      :q_antok_interaction, :q_antok_suggestions, :bal_2013_spring, :bal_2012_fall, :bal_total, :social_work_yes, 
+      :social_work_no, :recomendation_antok, :recomendation_not_antok, :recomendation_no
+
   belongs_to :user
 
   before_save { |applic| applic.email=email.downcase}
@@ -26,7 +28,7 @@ class Applic < ActiveRecord::Base
   validates :q_your_values, presence: true
   validates :q_your_contribution, presence: true
   validates :q_your_problem_solving, presence: true
-  validates :q_antok_interaction, presence: true
-  validates :q_antok_suggestions, presence: true
-
+  validates :bal_2013_spring, presence: true, numericality: {:greater_than_or_equal_to => 0, :less_than_or_equal_to => 5}
+  validates :bal_2012_fall, presence: true, numericality: {:greater_than_or_equal_to => 0, :less_than_or_equal_to => 5}
+  validates :bal_total, presence: true, numericality: {:greater_than_or_equal_to => 0, :less_than_or_equal_to => 5}  
 end

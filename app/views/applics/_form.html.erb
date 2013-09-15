@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="span8 offset2">
+  <div class="span8 offset2 applic-form">
     <%= form_for(@applic) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
       <%= f.submit t(:save), class: "btn btn-large btn-primary" %>
@@ -8,13 +8,25 @@
       <h3><%= t(:your_status) %> </h3>
       <label class="checkbox"><%= f.check_box :student %><%= f.label :student %></label>
       <label class="checkbox"><%= f.check_box :student_magistrant %><%= f.label :student_magistrant %></label>
-      <label class="checkbox"><%= f.check_box :aspirant %><%= f.label :aspirant %></label>
-      <label class="checkbox"><%= f.check_box :specialist %><%= f.label :specialist %></label>
-      <label class="checkbox"><%= f.check_box :bachelor %><%= f.label :bachelor %></label>
-      <label class="checkbox"><%= f.check_box :magister %><%= f.label :magister %></label>
       <h3><%= t(:your_event) %> </h3>
       <label class="checkbox"><%= f.check_box :participate_grant %><%= f.label :participate_grant %></label>
       <label class="checkbox"><%= f.check_box :participate_ygf %><%= f.label :participate_ygf %></label>
+      <h3><%= t(:your_personal_info)%></h3>
+      <%= f.label :fio_rus %><%= f.text_field :fio_rus %>
+      <%= f.label :fio_eng %><%= f.text_field :fio_eng %>
+      <%= f.label :post_address %><%= f.text_field :post_address %>
+      <%= f.label :email %><%= f.text_field :email %>
+      <%= f.label :phone_home %><%= f.text_field :phone_home %>
+      <%= f.label :phone_work %><%= f.text_field :phone_work %>
+      <%= f.label :aksts_events_participation %><%= f.text_field :aksts_events_participation %>
+      <%= field_set_tag 'Ваш пол' do %>
+        <label class="checkbox"><%= f.check_box :sex_m %><%= f.label :sex_m %></label>
+        <label class="checkbox"><%= f.check_box :sex_w %><%= f.label :sex_w %></label>
+      <% end %>
+      <%= f.label :university %><%= f.text_field :university %>
+      <%= f.label :study_year %><%= f.text_field :study_year %>
+      <%= f.label :birth %><%= f.text_field :birth %>
+      <label for="applic_aksts_enter_year">Год вступления в АНТОК (если еще не являетесь членом АНТОК, то укажите - "2013". Вступление в АНТОК безвозмездно и является обязательным условием для участия в Конкурсе грантов АНТОК. Подробнее о процедуре вступления см. тут <a href="http://www.aksts.ru/vstuplenie_antok" target="_blank">www.aksts.ru</a>)</label><%= f.text_field :aksts_enter_year %>
       <h3><%= t(:your_specialization)%></h3>
       <label class="checkbox"><%= f.check_box :spec_astronomy %><%= f.label :spec_astronomy %></label>
       <label class="checkbox"><%= f.check_box :spec_agriculture %><%= f.label :spec_agriculture %></label>
@@ -40,30 +52,26 @@
       <label class="checkbox"><%= f.check_box :spec_chemistry %><%= f.label :spec_chemistry %></label>
       <label class="checkbox"><%= f.check_box :spec_energetics_electrotechnics %><%= f.label :spec_energetics_electrotechnics %></label>
       <%= f.label :spec_other %><%= f.text_field :spec_other %>
-      <h3><%= t(:your_personal_info)%></h3>
-      <%= f.label :fio_rus %><%= f.text_field :fio_rus %>
-      <%= f.label :fio_eng %><%= f.text_field :fio_eng %>
-      <%= f.label :fio_kor %><%= f.text_field :fio_kor %>
-      <%= f.label :post_address %><%= f.text_field :post_address %>
-      <%= f.label :phone_home %><%= f.text_field :phone_home %>
-      <%= f.label :phone_work %><%= f.text_field :phone_work %>
-      <%= f.label :aksts_events_participation %><%= f.text_field :aksts_events_participation %>
-      <%= field_set_tag 'Ваш пол' do %>
-        <label class="checkbox"><%= f.check_box :sex_m %><%= f.label :sex_m %></label>
-        <label class="checkbox"><%= f.check_box :sex_w %><%= f.label :sex_w %></label>
-      <% end %>
-      <%= f.label :university %><%= f.text_field :university %>
-      <%= f.label :study_year %><%= f.text_field :study_year %>
-      <%= f.label :email %><%= f.text_field :email %>
-      <%= f.label :birth %><%= f.text_field :birth %>
-      <%= f.label :aksts_enter_year %><%= f.text_field :aksts_enter_year %>
+      <h3><%= t(:your_add_info) %></h3>
+      <h4><%= t(:your_bal) %></h4>
+      <%= f.label :bal_2013_spring %><%= f.text_field :bal_2013_spring %>
+      <%= f.label :bal_2012_fall %><%= f.text_field :bal_2012_fall %>
+      <%= f.label :bal_total %><%= f.text_field :bal_total %>
+      <h4><%= t(:your_social) %></h4>
+      <label class="checkbox"><%= f.check_box :social_work_yes %><%= f.label :social_work_yes %></label>
+      <label class="checkbox"><%= f.check_box :social_work_no %><%= f.label :social_work_no %></label>
+      <h4><%= t(:your_recomendations) %></h4>
+      <label class="checkbox"><%= f.check_box :recomendation_antok %><%= f.label :recomendation_antok %></label>
+      <label class="checkbox"><%= f.check_box :recomendation_not_antok %><%= f.label :recomendation_not_antok %></label>
+      <label class="checkbox"><%= f.check_box :recomendation_no %><%= f.label :recomendation_no %></label>
       <h3><%= t(:your_esse)%></h3>
       <%= f.label :q_your_values %><%= f.text_area :q_your_values, rows: 5 %>
       <%= f.label :q_your_contribution %><%= f.text_area :q_your_contribution, rows: 5 %>
       <%= f.label :q_your_problem_solving %><%= f.text_area :q_your_problem_solving, rows: 5 %>
-      <%= f.label :q_antok_interaction %><%= f.text_area :q_antok_interaction, rows: 5 %>
-      <%= f.label :q_antok_suggestions %><%= f.text_area :q_antok_suggestions, rows: 5 %>
-
+       <div class="alert">
+         <button type="button" class="close" data-dismiss="alert">&times;</button>
+           Все подтверждающие документы подаются в электронном виде по адресу <a href="mailto:AKSTSRussia@gmail.com">AKSTSRussia@gmail.com</a>. Документы с оригинальными печатями, подписями и т.п. сканируются в цвете с разрешением не менее 300 dpi и конвертируются в формат PDF. Все документы, должны быть представлены в формате PDF или одном из форматов MS Office (DOC, PPT, XLS). Суммарный размер файлов заявки не должен превышать 10 Мб. Заявки на участие, без подтверждающих документов, к рассмотрению не принимаются.
+       </div>
       <%= f.submit t(:save), class: "btn btn-large btn-primary", id: "Save" %>
       <%= link_to t(:cancel), current_user.applic, class: "btn btn-large btn-secondary" %>
     <% end %>

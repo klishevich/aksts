@@ -8,13 +8,25 @@
       <h3><%= t(:your_status) %> </h3>
       <label class="checkbox"><%= f.check_box :student, disabled: true %><%= f.label :student %></label>
       <label class="checkbox"><%= f.check_box :student_magistrant, disabled: true %><%= f.label :student_magistrant %></label>
-      <label class="checkbox"><%= f.check_box :aspirant, disabled: true %><%= f.label :aspirant %></label>
-      <label class="checkbox"><%= f.check_box :specialist, disabled: true %><%= f.label :specialist %></label>
-      <label class="checkbox"><%= f.check_box :bachelor, disabled: true %><%= f.label :bachelor %></label>
-      <label class="checkbox"><%= f.check_box :magister, disabled: true %><%= f.label :magister %></label>
       <h3><%= t(:your_event) %> </h3>
       <label class="checkbox"><%= f.check_box :participate_grant, disabled: true %><%= f.label :participate_grant %></label>
       <label class="checkbox"><%= f.check_box :participate_ygf, disabled: true %><%= f.label :participate_ygf %></label>
+      <h3><%= t(:your_personal_info)%></h3>
+      <%= f.label :fio_rus %><%= f.text_field :fio_rus, disabled: true %>
+      <%= f.label :fio_eng %><%= f.text_field :fio_eng, disabled: true %>
+      <%= f.label :post_address %><%= f.text_field :post_address, disabled: true %>
+      <%= f.label :email %><%= f.text_field :email, disabled: true %>
+      <%= f.label :phone_home %><%= f.text_field :phone_home, disabled: true %>
+      <%= f.label :phone_work %><%= f.text_field :phone_work, disabled: true %>
+      <%= f.label :aksts_events_participation %><%= f.text_field :aksts_events_participation, disabled: true %>
+      <%= field_set_tag 'Ваш пол' do %>
+      <label class="checkbox"><%= f.check_box :sex_m, disabled: true %><%= f.label :sex_m %></label>
+      <label class="checkbox"><%= f.check_box :sex_w, disabled: true %><%= f.label :sex_w %></label>
+      <% end %>
+      <%= f.label :university %><%= f.text_field :university, disabled: true %>
+      <%= f.label :study_year %><%= f.text_field :study_year, disabled: true %>
+      <%= f.label :birth %><%= f.text_field :birth, disabled: true %>
+      <%= f.label :aksts_enter_year %><%= f.text_field :aksts_enter_year, disabled: true %>
       <h3><%= t(:your_specialization)%></h3>
       <label class="checkbox"><%= f.check_box :spec_astronomy, disabled: true %><%= f.label :spec_astronomy %></label>
       <label class="checkbox"><%= f.check_box :spec_agriculture, disabled: true %><%= f.label :spec_agriculture %></label>
@@ -40,31 +52,28 @@
       <label class="checkbox"><%= f.check_box :spec_chemistry, disabled: true %><%= f.label :spec_chemistry %></label>
       <label class="checkbox"><%= f.check_box :spec_energetics_electrotechnics, disabled: true %><%= f.label :spec_energetics_electrotechnics %></label>
       <%= f.label :spec_other %><%= f.text_field :spec_other, disabled: true %>
-       <h3><%= t(:your_personal_info)%></h3>
-      <%= f.label :fio_rus %><%= f.text_field :fio_rus, disabled: true %>
-      <%= f.label :fio_eng %><%= f.text_field :fio_eng, disabled: true %>
-      <%= f.label :fio_kor %><%= f.text_field :fio_kor, disabled: true %>
-      <%= f.label :post_address %><%= f.text_field :post_address, disabled: true %>
-      <%= f.label :phone_home %><%= f.text_field :phone_home, disabled: true %>
-      <%= f.label :phone_work %><%= f.text_field :phone_work, disabled: true %>
-      <%= f.label :aksts_events_participation %><%= f.text_field :aksts_events_participation, disabled: true %>
-      <%= field_set_tag 'Ваш пол' do %>
-      <label class="checkbox"><%= f.check_box :sex_m, disabled: true %><%= f.label :sex_m %></label>
-      <label class="checkbox"><%= f.check_box :sex_w, disabled: true %><%= f.label :sex_w %></label>
-      <% end %>
-      <%= f.label :university %><%= f.text_field :university, disabled: true %>
-      <%= f.label :study_year %><%= f.text_field :study_year, disabled: true %>
-      <%= f.label :email %><%= f.text_field :email, disabled: true %>
-      <%= f.label :birth %><%= f.text_field :birth, disabled: true %>
-      <%= f.label :aksts_enter_year %><%= f.text_field :aksts_enter_year, disabled: true %>
+      <h3><%= t(:your_add_info) %></h3>
+      <h4><%= t(:your_bal) %></h4>
+      <%= f.label :bal_2013_spring %><%= f.text_field :bal_2013_spring, disabled: true %>
+      <%= f.label :bal_2012_fall %><%= f.text_field :bal_2012_fall, disabled: true  %>
+      <%= f.label :bal_total %><%= f.text_field :bal_total, disabled: true  %>
+      <h4><%= t(:your_social) %></h4>
+      <label class="checkbox"><%= f.check_box :social_work_yes, disabled: true  %><%= f.label :social_work_yes %></label>
+      <label class="checkbox"><%= f.check_box :social_work_no, disabled: true  %><%= f.label :social_work_no %></label>
+      <h4><%= t(:your_recomendations) %></h4>
+      <label class="checkbox"><%= f.check_box :recomendation_antok, disabled: true  %><%= f.label :recomendation_antok %></label>
+      <label class="checkbox"><%= f.check_box :recomendation_not_antok, disabled: true  %><%= f.label :recomendation_not_antok %></label>
+      <label class="checkbox"><%= f.check_box :recomendation_no, disabled: true  %><%= f.label :recomendation_no %></label>
       <h3><%= t(:your_esse)%></h3>
       <%= f.label :q_your_values %><%= f.text_area :q_your_values, rows: 5, disabled: true %>
       <%= f.label :q_your_contribution %><%= f.text_area :q_your_contribution, rows: 5, disabled: true %>
       <%= f.label :q_your_problem_solving %><%= f.text_area :q_your_problem_solving, rows: 5, disabled: true %>
-      <%= f.label :q_antok_interaction %><%= f.text_area :q_antok_interaction, rows: 5, disabled: true %>
-      <%= f.label :q_antok_suggestions %><%= f.text_area :q_antok_suggestions, rows: 5, disabled: true %>
 
     <% end %>
+    <div class="alert">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+        Все подтверждающие документы подаются в электронном виде по адресу <a href="mailto:AKSTSRussia@gmail.com">AKSTSRussia@gmail.com</a>. Документы с оригинальными печатями, подписями и т.п. сканируются в цвете с разрешением не менее 300 dpi и конвертируются в формат PDF. Все документы, должны быть представлены в формате PDF или одном из форматов MS Office (DOC, PPT, XLS). Суммарный размер файлов заявки не должен превышать 10 Мб. Заявки на участие, без подтверждающих документов, к рассмотрению не принимаются.
+    </div>
     <%= link_to t(:home), root_path, class: "btn btn-large btn-primary" %>
     <%= link_to t(:edit), edit_applic_path, class: "btn btn-large btn-secondary" %>
   </div>

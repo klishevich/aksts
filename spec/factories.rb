@@ -71,6 +71,14 @@ FactoryGirl.define do
     q_your_problem_solving "1st place Krasnoyarsk territory mathimatical contest"
     q_antok_interaction "twitter"
     q_antok_suggestions "more young people"
+    bal_2013_spring "4.5"
+    bal_2012_fall "5"
+    bal_total "4.7"
+    social_work_yes 1
+    social_work_no 0
+    recomendation_antok 1
+    recomendation_not_antok 0
+    recomendation_no 0
 	user
   end
 end

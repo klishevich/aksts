@@ -1,8 +1,8 @@
 <% provide(:title, t(:your_application_details)) %>
-<h1><%= t(:your_application_details)%></h1>
+<h1 id="h1_your_application_details"><%= t(:your_application_details)%></h1>
 <div class="row">
   <div class="span8 offset2 applic-form">
-    <%= link_to t(:home), root_path, class: "btn btn-large btn-secondary" %>
+    <%= link_to t(:home), root_path, class: "btn btn-large btn-secondary", id: "btn-home" %>
     <%= form_for(@applic) do |f| %>
       <h3><%= t(:your_status) %> </h3>
       <label class="checkbox"><%= f.check_box :student, disabled: true %><%= f.label :student %></label>

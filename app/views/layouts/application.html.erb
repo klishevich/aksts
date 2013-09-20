@@ -16,25 +16,28 @@
           <%= link_to "aksts", root_path , id: "logo" %>
           <nav>
             <ul class="nav pull-right">
-              <li><%= link_to "Home",    root_path %></li>
-              <li><%= link_to "Help",    help_path %></li>
+              <li><%= link_to "Главная", root_path, id: "goto_home" %></li>
+              <li><%= link_to "Сайт АНТОК", "http://www.aksts.ru", id: "goto_antok"  %></li>
               <% if signed_in? %>
-                <li><%= link_to "Users", users_path %></li>
+                <% if current_user.admin? %>
+                  <li><%= link_to "Поданые заявки", applics_path , id: "goto_applics_path" %></li>
+                  <li><%= link_to "Пользовтели", users_path , id: "goto_users_path" %></li>
+                <% end %>
                 <li id="fat-menu" class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    Account <b class="caret"></b>
+                    Меню <b class="caret"></b>
                   </a>
                   <ul class="dropdown-menu">
-                    <li><%= link_to "Profile", current_user %></li>
-                    <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+                    <li><%= link_to "Профиль", current_user, id: "goto_profile" %></li>
+                    <li><%= link_to "Настройки ", edit_user_path(current_user), id: "goto_settings" %></li>
                     <li class="divider"></li>
                     <li>
-                      <%= link_to "Sign out", signout_path, method: "delete" %>
+                      <%= link_to "Выход", signout_path, method: "delete", id: "goto_exit" %>
                     </li>
                   </ul>
                 </li>
               <% else %>
-                <li><%= link_to "Sign in", signin_path %></li>
+                <li><%= link_to "Вход", signin_path, id: "goto_signin" %></li>
               <% end %>
             </ul>
           </nav>
@@ -48,13 +51,13 @@
 	  <%= yield %>
 	<footer class="footer">
 	  <small>
-	  	Site developed by
+	  	Разработка сайта
 	    <a href="http://www.busation.com/">@busation</a>
 	  </small>
 	  <nav>
 	    <ul>
-	      <li><%= link_to "About",   about_path %></li>
-	      <li><%= link_to "Contact", contact_path %></li>
+	      <li><%= link_to "Об АНТОК",   about_path, id: "goto_about_antok" %></li>
+	      <li><%= link_to "Контакты", contact_path, id: "goto_contacts" %></li>
 	    </ul>
 	  </nav>
 	</footer>

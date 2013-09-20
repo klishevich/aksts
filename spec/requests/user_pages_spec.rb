@@ -86,7 +86,7 @@ describe "UserPages" do
       
       describe "after creating user" do
         before { click_button submit} 
-        it { should have_link('Sign out') }
+        it { find('#goto_exit') }
       end
     end
   end
@@ -120,7 +120,7 @@ describe "UserPages" do
 
       it { should have_selector('h1', text: new_name) }
       it { should have_selector('div.alert.alert-success') }
-      it { should have_link('Sign out', href: signout_path) }
+      it { find('#goto_exit')}
       specify { user.reload.name.should  == new_name }
       specify { user.reload.email.should == new_email }
     end  

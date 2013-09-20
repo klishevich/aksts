@@ -253,6 +253,9 @@ en:
       pm: вечера
     # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
     activemodel:
+      attributes:
+        session:
+          password: "Пароль"
       errors:
         <<: *errors
     activerecord:

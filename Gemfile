@@ -26,6 +26,7 @@ group :test do
 end
 
 group :production do
+  gem 'therubyracer'
 end
 
 group :assets do

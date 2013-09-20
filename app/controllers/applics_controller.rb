@@ -1,8 +1,13 @@
 class ApplicsController < ApplicationController
   before_filter :signed_in_user
   before_filter :have_no_applic, only: [:new, :create]
+  before_filter :admin_user, only: :index
 
   include ApplicsHelper
+
+  def index
+    @applics=Applic.paginate(page: params[:page])
+  end
 
   def new
     @applic = current_user.build_applic
@@ -19,7 +24,11 @@ class ApplicsController < ApplicationController
   end
 
   def show
-  	@applic=current_user.applic
+  	if current_user.admin? 
+      @applic = Applic.find(params[:id])
+    else
+      @applic||=current_user.applic
+    end
   end
 
   def edit
@@ -37,5 +46,9 @@ class ApplicsController < ApplicationController
   end
 
   private
+
+  def admin_user
+    redirect_to(root_url) unless current_user.admin?
+  end
 
 end

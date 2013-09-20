@@ -1,0 +1,10 @@
+<% provide(:title, 'Поданные заявки') %>
+<h1 id='h1_all_applics'>Поданные заявки</h1>
+<%= will_paginate %>
+<ul class="applics">
+  <% @applics.each do |applic|%>
+    <li> <%= link_to applic.fio_rus, applic %>, <%= applic.birth %> года рождения, тел. <%= applic.phone_home %>, <%= applic.email %>, <%= applic.university %>, <% applic.study_year %> год обучения
+    </li>
+  <% end %>
+</ul>
+<%= will_paginate %>

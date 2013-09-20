@@ -2,8 +2,8 @@
   <div class="span8 offset2 applic-form">
     <%= form_for(@applic) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
-      <%= f.submit t(:save), class: "btn btn-large btn-primary" %>
-      <%= link_to t(:cancel), current_user.applic, class: "btn btn-large btn-secondary" %>
+      <%= f.submit t(:save), class: "btn btn-large btn-primary", id: 'btn-save' %>
+      <%= link_to t(:cancel), root_path, class: "btn btn-large btn-secondary" %>
 
       <h3><%= t(:your_status) %> </h3>
       <label class="checkbox"><%= f.check_box :student %><%= f.label :student %></label>
@@ -77,7 +77,7 @@
            Перед тем как сохранить, проверьте правильность внесенных данных. После сохранения анкеты, внести изменения будет не возможно.
        </div>
       <%= f.submit t(:save), class: "btn btn-large btn-primary", id: "Save" %>
-      <%= link_to t(:cancel), current_user.applic, class: "btn btn-large btn-secondary" %>
+      <%= link_to t(:cancel), root_path, class: "btn btn-large btn-secondary" %>
     <% end %>
   </div>
 </div>

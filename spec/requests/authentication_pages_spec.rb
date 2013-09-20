@@ -7,16 +7,16 @@ describe "Authentication" do
   describe "signin page" do
     before { visit signin_path }
 
-    it { should have_selector('h1',    text: 'Sign in') }
+    it { should have_selector('h1', id: 'h1_sign_in') }
   end
 
   describe "signin" do
     before { visit signin_path }
 
     describe "with invalid information" do
-      before { click_button "Sign in" }
+      before { click_button "sign_in" }
 
-      it { should have_selector('h1', text: 'Sign in') }
+      it { should have_selector('h1', id: 'sign_in') }
       it { should have_selector('div.alert.alert-error', text: 'Invalid') }
     end
 
@@ -25,18 +25,17 @@ describe "Authentication" do
       before do
         fill_in "Email",    with: user.email.upcase
         fill_in "Password", with: user.password
-        click_button "Sign in"
+        click_button "sign_in"
       end
 
-       it { should have_link('Users', href: users_path)}
-      it { should have_link('Profile', href: user_path(user)) }
-      it { should have_link('Settings', href: edit_user_path(user))}
-      it { should have_link('Sign out', href: signout_path) }
+      it { find('#goto_profile')}
+      it { find('#goto_settings')}
+      it { find('#goto_exit') }
       it { should_not have_link('Sign in', href: signin_path) }
 
       describe "followed by signout" do
-        before { click_link 'Sign out' }
-        it { should have_link('Sign in') }
+        before { click_link 'goto_exit' }
+        it { should have_link('goto_signin') }
       end
     end  
   end
@@ -51,7 +50,7 @@ describe "Authentication" do
           visit edit_user_path(user)
           fill_in "Email",    with: user.email
           fill_in "Password", with: user.password
-          click_button "Sign in"
+          click_button "sign_in"
         end
 
         describe "after signing in" do
@@ -66,7 +65,7 @@ describe "Authentication" do
 
         describe "visiting the edit page" do
           before { visit edit_user_path(user) }
-          it { should have_selector('title', text: 'Sign in') }
+          it { should have_selector('h1', id: 'h1_sign_in') }
         end
 
         describe "submitting to the update action" do
@@ -76,7 +75,7 @@ describe "Authentication" do
 
         describe "visiting the user index" do
           before { visit users_path }
-          it { should have_selector('title', text: 'Sign in') }
+          it { should have_selector('h1', id: 'h1_sign_in') }
         end
       end
     end
@@ -106,6 +105,36 @@ describe "Authentication" do
       describe "submitting a DELETE request to the Users#destroy action" do
         before { delete user_path(user) }
         specify { response.should redirect_to(root_url) }
+      end
+
+      describe "view applics" do
+        before { visit applics_path }
+        it { find('#h1_welcome_aksts') }
+      end
+
+      describe "view applic page" do
+        before {visit "/applics/#{user.applic}"}
+        it { find('#h1_welcome_aksts') }
+      end
+
+    end
+
+    describe "as admin user" do
+      let(:user) { FactoryGirl.create(:user) }
+      let(:applic) { FactoryGirl.create(:applic, user: user)}
+      let(:admin) { FactoryGirl.create(:admin) }
+
+      before { sign_in admin}
+
+      describe "view applics" do
+        before {visit applics_path}
+        it { find('#h1_all_applics') }
+        # it { should have_link("/applics/#{applic.id}") }
+      end
+
+      describe "view applic page" do
+        before {visit "/applics/#{user.applic}"}
+        # it { find('#h1_your_application_details') }
       end
     end
 

@@ -8,6 +8,7 @@ gem 'faker', '1.0.1'
 gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.6'
 gem 'bootstrap-datepicker-rails'
+gem "mail", '2.5.4'
 
 group :development, :test do
 	gem 'rspec-rails', '2.11.0'

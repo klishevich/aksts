@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Добро пожаловать на сайт АНТОК, <%= @user.name %></h1>
+    <p>
+      Вы успешно зарегистрировались на сайте my.aksts.ru,
+      ваш логин для сайта: <%= @user.email %>.<br/>
+    </p>
+    <p>
+      Чтобы войти на сайт, перейдите по ссылке: <%= link_to @url, @url %>.
+    </p>
+    <p>Спасибо что присоединились к АНТОК, хорошего вам дня!</p>
+    <p><%= image_tag attachments['logo.jpg'].url %></p>
+  </body>
+</html>

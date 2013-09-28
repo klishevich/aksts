@@ -6,6 +6,8 @@ Aksts::Application.routes.draw do
 
   resources :applics
 
+  resources :password_resets
+
   
   get 'view_applic', to: 'applics#show'
   match '/edit_applic', to: 'applics#edit'

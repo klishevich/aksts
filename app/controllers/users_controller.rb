@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   end
 
   def new
+    # mail=UserMailer.test_email.deliver
   	@user = User.new
   end
 
@@ -19,6 +20,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
+      UserMailer.welcome_email(@user).deliver
       sign_in @user
       flash[:success] = t(:welcome_to_aksts)
       redirect_to root_url
@@ -34,7 +36,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(params[:user])
-      flash[:success] = "Profile updated"
+      flash[:success] = t(:profile_updated)
       sign_in @user
       redirect_to @user
     else
@@ -46,9 +48,9 @@ class UsersController < ApplicationController
     usr=User.find(params[:id])
     if (usr!=current_user)
       usr.destroy
-      flash[:success] = "User destroyed."
+      flash[:success] = t(:user_destroyed)
     else
-      flash[:error] = "You can not delete youself."
+      flash[:error] = t(:you_can_not_delete_youself)
     end
     redirect_to users_url
   end

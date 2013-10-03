@@ -13,6 +13,7 @@ class UserMailer < ActionMailer::Base
     Rails.logger.debug 'password_reset'
     @url = edit_password_reset_url(user.password_reset_token)
     @user = user
+    attachments['logo.jpg'] = File.read("#{Rails.root.to_s}/app/assets/images/aksts_logo_mail.jpg")
     mail :to => user.email, subject: t(:password_reset_email_subject)
   end
 

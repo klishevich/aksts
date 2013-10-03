@@ -6,9 +6,10 @@ development:
   :password: lkys_123
   :enable_starttls_auto: true
 production:
-  :address: smtp.gmail.com
-  :port: 587
+  :address: localhost
+  :port: 25
+  :domain: my.aksts.ru
   :authentication: plain
-  :user_name: busation@gmail.com
-  :password: lkys_123
+  :user_name: info@aksts.ru
+  :password: 12345678m
   :enable_starttls_auto: true

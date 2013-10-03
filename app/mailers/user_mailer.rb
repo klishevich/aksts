@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: "from@example.com"
+  default from: "mans1st@yandex.ru"
 
   def welcome_email(user)
   	Rails.logger.debug 'welcome_email'

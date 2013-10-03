@@ -20,9 +20,22 @@ Aksts::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
-  config.action_mailer.default_url_options = { :host => 'my.aksts.ru' }
+  #config.action_mailer.default_url_options = { :host => 'my.aksts.ru' }
 
-  ActionMailer::Base.delivery_method = :smtp
+  #ActionMailer::Base.delivery_method = :smtp
+
+  config.action_mailer.default_url_options = { :host => "my.aksts.ru" }
+
+  config.action_mailer.delivery_method = :sendmail
+  config.action_mailer.sendmail_settings = { :arguments => "-i" }
+# Defaults to:
+# config.action_mailer.sendmail_settings = {
+#   location: '/usr/sbin/sendmail',
+#   arguments: '-i -t'
+# }
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+
 
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130928131924) do
+ActiveRecord::Schema.define(:version => 20131003192830) do
 
   create_table "applics", :force => true do |t|
     t.integer  "user_id"
@@ -61,11 +61,11 @@ ActiveRecord::Schema.define(:version => 20130928131924) do
     t.string   "email"
     t.date     "birth"
     t.integer  "aksts_enter_year"
-    t.string   "q_your_values"
-    t.string   "q_your_contribution"
-    t.string   "q_your_problem_solving"
-    t.string   "q_antok_interaction"
-    t.string   "q_antok_suggestions"
+    t.text     "q_your_values"
+    t.text     "q_your_contribution"
+    t.text     "q_your_problem_solving"
+    t.text     "q_antok_interaction"
+    t.text     "q_antok_suggestions"
     t.datetime "created_at",                                          :null => false
     t.datetime "updated_at",                                          :null => false
     t.decimal  "bal_2013_spring"

@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="span8 offset2 applic-form">
+    <%= form_for(@message) do |f| %>
+      <%= f.submit t(:save), class: "btn btn-large btn-primary", id: "Save" %>
+      <%= link_to t(:cancel), messages_path, class: "btn btn-large btn-secondary" %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <%= f.label :title %><%= f.text_field :title %>
+      <%= f.label :body %><%= f.text_area :body, rows: 20 %>
+      <%= f.submit t(:save), class: "btn btn-large btn-primary", id: "Save" %>
+      <%= link_to t(:cancel), messages_path, class: "btn btn-large btn-secondary" %>
+    <% end %>
+  </div>
+</div>

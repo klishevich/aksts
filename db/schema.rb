@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131003192830) do
+ActiveRecord::Schema.define(:version => 20131005151241) do
 
   create_table "applics", :force => true do |t|
     t.integer  "user_id"
@@ -80,6 +80,13 @@ ActiveRecord::Schema.define(:version => 20131003192830) do
   end
 
   add_index "applics", ["user_id"], :name => "index_applics_on_user_id"
+
+  create_table "messages", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name"

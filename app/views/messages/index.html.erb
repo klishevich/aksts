@@ -1,0 +1,11 @@
+<% provide(:title, 'Список новостей') %>
+<h1 id='h1_all_messages'>Список новостей</h1>
+<%= link_to t(:new_message), new_message_path, class: "btn btn-large btn-secondary" %>
+<%= link_to t(:home), root_path, class: "btn btn-large btn-secondary" %>
+<%= will_paginate %>
+<ul class="applics">
+  <% @messages.each do |message|%>
+    <li> <%= link_to message.title, message %></li>
+  <% end %>
+</ul>
+<%= will_paginate %>

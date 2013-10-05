@@ -17,9 +17,12 @@ class UserMailer < ActionMailer::Base
     mail :to => user.email, subject: t(:password_reset_email_subject)
   end
 
-  def test_email
-    Rails.logger.debug 'test_email'
-    mail(:to => 'm.klishevich@yandex.ru', :subject => "testing rails")
+  def send_message(message)
+    User.all.each do |user|
+      @user = user
+      @message = message
+      mail to: user.email, subject: message.title
+    end
   end
 
   def test_email1

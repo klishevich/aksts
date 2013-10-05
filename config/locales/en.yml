@@ -325,6 +325,9 @@ en:
           email: "e-mail"
           password: "Пароль"
           password_confirmation: "Подтверждение пароля"
+        message:
+          title: "Заголовок"
+          body: "Содержание"
       errors:
         <<: *errors
     hello: "Привет"
@@ -362,3 +365,7 @@ en:
     email_sent_with_password_reset_instructions: "Отправлено эл. письмо с инструкцией по смене пароля"
     password_reset_has_expired: "Ссылка для изменения пароля просрочена"
     password_has_been_reset: "Пароль был изменен"
+    message_saved: "Новость сохранена"
+    message_updated_successfuly: "Новость успешно обновлена"
+    new_message: "Создать новость"
+    messages_list: "К списку новостей"

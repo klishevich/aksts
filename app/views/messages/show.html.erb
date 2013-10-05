@@ -1,0 +1,14 @@
+<% provide(:title, "Просмотр новости") %>
+<h1>Просмотр новости</h1>
+<div class="row">
+  <div class="span8 offset2 applic-form">
+    <%= link_to t(:edit), edit_message_path(@message), class: "btn btn-large btn-secondary" %>
+    <%= link_to t(:messages_list), messages_path, class: "btn btn-large btn-secondary" %>
+    <%= form_for(@message) do |f| %>
+      <%= f.label :title %><%= f.text_field :title, disabled: true %>
+      <%= f.label :body %><%= f.text_area :body, rows: 20, disabled: true %>
+    <% end %>
+    <%= link_to t(:edit), edit_message_path(@message), class: "btn btn-large btn-secondary" %>
+    <%= link_to t(:messages_list), messages_path, class: "btn btn-large btn-secondary" %>
+  </div>
+</div>

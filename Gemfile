@@ -9,7 +9,7 @@ gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.6'
 gem 'bootstrap-datepicker-rails'
 gem "mail", '2.5.4'
-gem 'delayed_job_active_record'
+gem 'delayed_job_active_record', :git => 'git://github.com/gaslight/delayed_job_active_record'
 gem "daemons"
 
 group :development, :test do

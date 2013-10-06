@@ -16,6 +16,7 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(params[:message])
     if @message.save
+      @message.deliver
       flash[:success] = t(:message_saved)
       redirect_to @message
     else

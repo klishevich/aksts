@@ -19,6 +19,12 @@ class User < ActiveRecord::Base
     save!(:validate => false)
     UserMailer.password_reset(self).deliver
   end
+  handle_asynchronously :send_password_reset
+
+  def notify_new_user 
+    UserMailer.welcome_email(self).deliver
+  end
+  handle_asynchronously :notify_new_user
 
   private
 

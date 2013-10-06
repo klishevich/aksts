@@ -4,7 +4,9 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-  	<h1>@message.title</h1>
-    <p>@message.body</p>
+  	<h1><%= @message.title %></h1>
+  	<p>Уважаемый <%= @user.name %></p>
+    <p><%= @message.body %></p>
+    <p><img src="http://www.aksts.ru/4mail/logo4mail.jpg"/></p>
   </body>
 </html>

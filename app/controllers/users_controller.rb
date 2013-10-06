@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      UserMailer.welcome_email(@user).deliver
+      @user.notify_new_user
       sign_in @user
       flash[:success] = t(:welcome_to_aksts)
       redirect_to root_url

@@ -7,7 +7,7 @@ describe "Authentication" do
   describe "signin page" do
     before { visit signin_path }
 
-    it { should have_selector('h1', id: 'h1_sign_in') }
+    it { find('#h1_sign_in')}
   end
 
   describe "signin" do
@@ -16,7 +16,7 @@ describe "Authentication" do
     describe "with invalid information" do
       before { click_button "sign_in" }
 
-      it { should have_selector('h1', id: 'sign_in') }
+      it { find('#h1_sign_in') }
       it { should have_selector('div.alert.alert-error', text: 'Invalid') }
     end
 
@@ -65,7 +65,7 @@ describe "Authentication" do
 
         describe "visiting the edit page" do
           before { visit edit_user_path(user) }
-          it { should have_selector('h1', id: 'h1_sign_in') }
+          it { find('#h1_sign_in') }
         end
 
         describe "submitting to the update action" do
@@ -75,7 +75,7 @@ describe "Authentication" do
 
         describe "visiting the user index" do
           before { visit users_path }
-          it { should have_selector('h1', id: 'h1_sign_in') }
+          it { find('#h1_sign_in')}
         end
       end
     end

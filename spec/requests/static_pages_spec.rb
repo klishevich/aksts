@@ -11,7 +11,7 @@ describe "Static pages" do
     click_link 'goto_about_antok'
     page.should have_selector 'h1', text: 'About AKSTS'
     click_link 'goto_contacts'
-    page.should have_selector 'h1', text: 'Contacts'
+    find('#h1_contacts')
     click_link 'goto_home'
     find('#h1_welcome_aksts')
   end

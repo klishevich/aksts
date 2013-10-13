@@ -16,7 +16,8 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(params[:message])
     if @message.save
-      @message.deliver
+      @message.deliver if @message.send_to_subscribers
+      @message.send_twitter if @message.send_to_twitter
       flash[:success] = t(:message_saved)
       redirect_to @message
     else

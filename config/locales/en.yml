@@ -328,6 +328,10 @@ en:
         message:
           title: "Заголовок"
           body: "Содержание"
+          send_to_subscribers: "Отправить подписчикам на email"
+          send_to_twitter: "Отправить в Twitter (отправляется только Содержание)"
+          send_to_facebook: "Отправить в Facebook"
+          send_to_vkontakte: "Опубликовать ВКонтакте"
       errors:
         <<: *errors
     hello: "Привет"
@@ -369,3 +373,4 @@ en:
     message_updated_successfuly: "Новость успешно обновлена"
     new_message: "Создать новость"
     messages_list: "К списку новостей"
+    too_long_twit: "Длина твита не должна превышать 140 знаков. Длина вашего: "

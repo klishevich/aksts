@@ -4,6 +4,11 @@
       <%= f.submit t(:save), class: "btn btn-large btn-primary", id: "Save" %>
       <%= link_to t(:cancel), messages_path, class: "btn btn-large btn-secondary" %>
       <%= render 'shared/error_messages', object: f.object %>
+      <label class="checkbox"><%= f.check_box :send_to_subscribers %><%= f.label :send_to_subscribers %></label>
+      <label class="checkbox"><%= f.check_box :send_to_twitter %><%= f.label :send_to_twitter %></label>
+      <label class="checkbox"><%= f.check_box :send_to_facebook %><%= f.label :send_to_facebook %></label>
+      <label class="checkbox"><%= f.check_box :send_to_vkontakte %><%= f.label :send_to_vkontakte %></label>
+      <br/>
       <%= f.label :title %><%= f.text_field :title %>
       <%= f.label :body %><%= f.text_area :body, rows: 20 %>
       <%= f.submit t(:save), class: "btn btn-large btn-primary", id: "Save" %>

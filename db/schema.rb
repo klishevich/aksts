@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131006084632) do
+ActiveRecord::Schema.define(:version => 20131013035621) do
 
   create_table "applics", :force => true do |t|
     t.integer  "user_id"
@@ -100,8 +100,13 @@ ActiveRecord::Schema.define(:version => 20131006084632) do
   create_table "messages", :force => true do |t|
     t.string   "title"
     t.text     "body"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+    t.boolean  "send_to_subscribers"
+    t.boolean  "send_to_twitter"
+    t.boolean  "send_to_facebook"
+    t.boolean  "send_to_vkontakte"
+    t.text     "temp"
   end
 
   create_table "users", :force => true do |t|

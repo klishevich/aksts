@@ -13,6 +13,7 @@ gem "mail", '2.5.4'
 gem 'delayed_job_active_record', :git => 'git://github.com/gaslight/delayed_job_active_record'
 gem "daemons"
 gem "oauth"
+gem "prawn"
 
 
 group :development, :test do

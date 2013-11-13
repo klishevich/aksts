@@ -1,5 +1,7 @@
 Aksts::Application.routes.draw do
 
+  resources :widgets, only: [:index]
+
   resources :messages
 
   resources :users

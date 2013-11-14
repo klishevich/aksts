@@ -47,7 +47,7 @@ class ApplicsController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        send_data pdf.render, type: "application/pdf", disposition: "inline"
+        send_data pdf.render, filename: "applic#{@applic.id}.pdf", type: "application/pdf", disposition: "inline"
       end          
     end
   end

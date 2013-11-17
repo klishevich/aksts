@@ -42,7 +42,7 @@ class ApplicsController < ApplicationController
     # pdf = Prawn::Document.new
     # pdf.text "Hello World"
     # pdf.render_file "assignment.pdf"
-    pdf = ApplicReport.new
+    pdf = ApplicReport1.new
     pdf.generate(@applic)
     respond_to do |format|
       format.html
